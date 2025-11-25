@@ -5,6 +5,8 @@
   justify-content: center;
   min-height: 60vh;
   max-width: 800px;
+  position: relative;
+  z-index: 1;
 }
 
 .greeting {
@@ -24,13 +26,35 @@
 .button {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: var(--foreground);
-  color: var(--background);
+  background-color: transparent;
+  color: var(--foreground);
+  border: 2px solid var(--foreground);
   border-radius: 50px;
   font-weight: 600;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  opacity: 0.8;
+  background-color: var(--foreground);
+  color: var(--background);
+  transform: translateY(-2px);
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+  font-weight: 100;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }

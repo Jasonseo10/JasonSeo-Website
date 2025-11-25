@@ -15,21 +15,23 @@ export default function Navbar() {
     ];
 
     return (
-        <header className={`container ${styles.header}`}>
-            <Link href="/" className={styles.logo}>
-                Jason Seo
-            </Link>
-            <nav className={styles.nav}>
-                {navLinks.map((link) => (
-                    <Link
-                        key={link.name}
-                        href={link.href}
-                        className={`${styles.link} ${pathname === link.href ? styles.active : ''}`}
-                    >
-                        {link.name}
-                    </Link>
-                ))}
-            </nav>
+        <header className={styles.header}>
+            <div className={styles.headerContent}>
+                <Link href="/" className={styles.logo}>
+                    Jason Seo
+                </Link>
+                <nav className={styles.nav}>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className={`${styles.link} ${pathname === link.href ? styles.active : ''}`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
         </header>
     );
 }
